@@ -1,13 +1,10 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
-// Structure to store patient information
 struct Patient {
     int tokenNo;
     string name;
 };
-
 class Queue {
 private:
     struct Node {
@@ -20,14 +17,11 @@ private:
     int nextToken;
 
 public:
-    // Constructor to initialize the queue
     Queue() {
         front = nullptr;
         rear = nullptr;
         nextToken = 1;
     }
-
-    // 1. Add a patient / generate a token (Enqueue)
     void addPatient(string name) {
         Node* newNode = new Node();
         newNode->data.tokenNo = nextToken++;
@@ -42,8 +36,6 @@ public:
         }
         cout << "\n[Success] Token generated! Token No: " << newNode->data.tokenNo << " for " << name << "\n";
     }
-
-    // 2. Call the next patient (Dequeue)
     void callNextPatient() {
         if (isEmpty()) {
             cout << "\n[Notice] Queue is empty! No patients are currently waiting.\n";
@@ -62,8 +54,6 @@ public:
 
         delete temp;
     }
-
-    // 3. Display waiting patients
     void displayWaitingPatients() {
         if (isEmpty()) {
             cout << "\n[Notice] Queue is empty! No patients waiting.\n";
@@ -80,8 +70,6 @@ public:
         }
 
     }
-
-    // 4. Handle/Check empty queue
     bool isEmpty() {
         return (front == nullptr);
     }
