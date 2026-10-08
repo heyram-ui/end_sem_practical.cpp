@@ -70,15 +70,15 @@ public:
             return;
         }
 
-        cout << "\n==============================\n";
-        cout << "      WAITING PATIENTS        \n";
-        cout << "==============================\n";
+
+        cout << "WAITING PATIENTS";
+
         Node* temp = front;
         while (temp != nullptr) {
             cout << " Token No: " << temp->data.tokenNo << " --> " << temp->data.name << "\n";
             temp = temp->next;
         }
-        cout << "==============================\n";
+
     }
 
     // 4. Handle/Check empty queue
